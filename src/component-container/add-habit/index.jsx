@@ -128,11 +128,12 @@ class addHabit extends Component {
                                 }
                             }}
                             disabled={el.stateName === '已加入'}
+                            style={{ marginRight: '10px' }}
                         >{el.stateName}</Button>
                     }
                     multipleLine
                     key={index}
-                    style={typeof el.userCount === 'number' ? {} : { borderBottom: '4px solid #baeac2' }}
+                    style={typeof el.userCount === 'number' ? {} : { boxShadow: '0 0 20px #9596A0' }}
                 >
                     {<div className={`${style.habitName}`}>
                         {el.habitName}

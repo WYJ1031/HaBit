@@ -10,7 +10,7 @@
     padding:6px 0 6px 8px;
     font-size:16px;
     color:#666;
-    border-left:4px solid #39cc7b;
+    border-left:4px solid #06C1AE;
 }
 .message .content {
     background: #fff;
@@ -81,6 +81,6 @@
     overflow: hidden;
 }
 .btn.active {
-    color:#39cc7b;
-    border:1px solid #39cc7b
+    color:#06C1AE;
+    border:1px solid #06C1AE
 }

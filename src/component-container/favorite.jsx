@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 import { List, NavBar, Icon, PullToRefresh } from 'antd-mobile';
 import Detail from './detail/index.jsx';
-import WxImageViewer from 'react-wx-images-viewer';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
@@ -36,6 +35,7 @@ class favorite extends Component {
         //     console.log(tempRecord)
         //     this.getRecord()
         // }
+        console.log('isHaveDate:', isHaveDate);
     }
     componentWillUnmount() {
         let {
@@ -87,6 +87,7 @@ class favorite extends Component {
             isHaveDate
         } = this.props.record;
         let detail = '';
+        console.log('tempRecord', tempRecord);
 
         if (tempRecord && tempRecord.length > 0) {
             detail = tempRecord.map((item, index) => {

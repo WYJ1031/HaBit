@@ -1,5 +1,6 @@
 
 import React, { Component } from "react";
+import moment from 'moment';
 import { List, Modal } from 'antd-mobile';
 import { Link, Route, BrowserRouter, Switch, withRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
@@ -9,7 +10,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
 import * as actionMethod from '../action/index.js';
-
 
 class habit extends Component {
     constructor(props) {
@@ -108,18 +108,23 @@ class habit extends Component {
         if (!habitInfo) return;
         return habitInfo.map((item, index) => {
             let isClockIn = reBook ? false : item.isClockIn
+            // console.log('item----:', item, moment(item.lastDate).format('YYYY-MM-DD'), moment().format('YYYY-MM-DD'), item.habit.habitName);
+            // if (moment(item.lastDate).format('YYYY-MM-DD') !== moment().format('YYYY-MM-DD')) {
+            //     isClockIn = false;
+            // }
             return (
                 <List.Item
                     className="per-habit-item"
                     arrow=""
                     thumb={<div className='iconfont icon-marketing_fill'
-                        style={isClockIn?{color:'#39cc7b'}:{}}
+                        style={isClockIn?{color:'#06C1AE'}:{}}
                     ></div>}
                     multipleLine
                     onClick={() => {
                         this.forward(`/habit/book/${item.habit._id}`)
                     }}
                     key={index}
+                    style={{ boxShadow: '0 0 6px #B8B7B5', marginBottom: '15px' }}
                 >
                     {<div className="per-habit-name">{item.habit.habitName}</div>}
                     <List.Item.Brief className="per-habit-brief">已坚持{item.count}天</List.Item.Brief>

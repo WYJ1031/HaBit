@@ -8,17 +8,17 @@
     flex-direction: row;
     /* justify-content: space-between; */
     align-items: center;
-    background: #39cc7b;
+    background: #06C1AE;
 }
 .wrap .bar {
     width:100%;
-    background-color: #39cc7b;
+    background-color: #06C1AE;
 }
 .wrap .back {
     width:40px;
 }
 .addBtn {
-    background: #39cc7b;
+    background: #06C1AE;
     border:none;
 }
 .disableBtn {
@@ -27,7 +27,7 @@
 }
 
 .addBtn.active {
-    background: #82efb2;
+    background: #06C1AE;
 }
 .habitName {
     font-size:14px;

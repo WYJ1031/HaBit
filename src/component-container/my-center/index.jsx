@@ -6,6 +6,7 @@ import style from './myCenter.css';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import * as actionMethod from '../../action/index.js';
+import moment from 'moment'
 class mycenter extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ class mycenter extends Component {
     }
     componentDidMount() {
         this.state.userName = window.localStorage.getItem('userName')
-        console.log('11', this.props);
+        // console.log('11', this.props);
         // this.getRecord();
     }
 
@@ -43,12 +44,12 @@ class mycenter extends Component {
         let userId = window.localStorage.getItem("userId");
         // let lastRecord = tempRecord.length > 0 ? tempRecord[tempRecord.length - 1]._id : ''
 
-        async_getRecord({
-            userId,
+        // async_getRecord({
+        //     userId,
             // habitId,
             // lastRecord,
-            type: 'getAllRecord'
-        })
+        //     type: 'myCollect'
+        // })
     }
 
     habitList() {
@@ -64,7 +65,17 @@ class mycenter extends Component {
                 >
                     <Link to={`/record/${item.habit._id}/`}>
                         <div className="per-habit-name">{item.habit.habitName}</div>
-                        <List.Item.Brief className="per-habit-brief">坚持了{item.habit.userCount}次</List.Item.Brief>
+                        {
+                            (item.habit.userCount == 1) ?
+                            (
+                                <List.Item.Brief className="per-habit-brief">目前只有你加入哦，快叫上其他小伙伴~</List.Item.Brief>
+                            ) :
+                            (
+                                <List.Item.Brief className="per-habit-brief">有{item.habit.userCount}个小伙伴在一起哦~</List.Item.Brief>
+                            )
+
+                        }
+                        
                     </Link>
                 </List.Item>
             )
@@ -98,7 +109,7 @@ class mycenter extends Component {
                         <p></p>
                     </div>
                 </div>
-                <p className={`${style.introduce}`}>简单介绍自己</p>
+                <p className={`${style.introduce}`}>千里之行，始于足下！</p>
 
                 <div className={`${style.otherHabit} otherHabit`}>
                     <h3 className={`${style.title}`}>我的习惯记录</h3>
@@ -106,7 +117,7 @@ class mycenter extends Component {
                         {this.habitList()}
                     </List>
                 </div>
-                <div className={`${style.message} myCenter`}>
+                {/* <div className={`${style.message} myCenter`}>
                     <h3 className={`${style.title}`}>通知</h3>
                     <div className={`${style.content}`}>
 
@@ -131,7 +142,7 @@ class mycenter extends Component {
                                                                     <span className={`${style.msg_type}`}>评论了你的记录</span>
                                                                 </div>
                                                                 <p className={`${style.msg_body}`}>{item1.content}</p>
-                                                                <List.Item.Brief style={{ fontSize: "12px", margin: "0" }} >{item1.time}</List.Item.Brief>
+                                                                <List.Item.Brief style={{ fontSize: "12px", margin: "0" }} >{moment(item1.time).format('YYYY-MM-DD')}</List.Item.Brief>
                                                             </div>
                                                         </Link>
                                                     </List.Item>
@@ -141,55 +152,9 @@ class mycenter extends Component {
                                     )
                                 })
                             }
-                            {/* <List.Item
-                                thumb={<div className={`${style.msg_userPic}`}>
-                                    <Link to="">
-                                        <img src="http://img2.imgtn.bdimg.com/it/u=1416157376,2250476580&fm=27&gp=0.jpg" alt="" />
-                                    </Link>
-                                </div>}
-                                multipleLine
-                            >
-                                <Link to="/habit/book/0001" className={`${style.msg_right}`}>
-                                    <div className={`${style.msg_item}`}>
-                                        <div className={`${style.msg_user}`}>
-                                            <span>张三</span>
-                                            <span className={`${style.msg_type}`}>评论了你的记录</span>
-                                        </div>
-                                        <p className={`${style.msg_body}`}>评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论</p>
-                                        <List.Item.Brief style={{ fontSize: "12px", margin: "0" }} >12:00</List.Item.Brief>
-                                    </div>
-                                    <div className={`${style.msg_record}`}>
-                                        <img src="http://img2.imgtn.bdimg.com/it/u=2421375767,909320505&fm=27&gp=0.jpg" />
-                                    </div>
-
-                                </Link>
-                            </List.Item> */}
-                            {/* <List.Item
-                                className=""
-                                thumb={<div className={`${style.msg_userPic}`}>
-                                    <Link to="">
-                                        <img src="http://img2.imgtn.bdimg.com/it/u=1416157376,2250476580&fm=27&gp=0.jpg" alt="" />
-                                    </Link>
-                                </div>}
-                                multipleLine
-                            >
-                                <Link to="/habit/book/0001" className={`${style.msg_right}`}>
-                                    <div className={`${style.msg_item}`}>
-                                        <div className={`${style.msg_user}`}>
-                                            <span>张三</span>
-                                            <span className={`${style.msg_type}`}>点赞了你的记录</span>
-                                        </div>
-                                        <List.Item.Brief style={{ fontSize: "12px", margin: "0" }} >12:00</List.Item.Brief>
-                                    </div>
-                                    <div className={`${style.msg_record}`}>
-                                        <img src="http://img2.imgtn.bdimg.com/it/u=2421375767,909320505&fm=27&gp=0.jpg" />
-                                    </div>
-
-                                </Link>
-                            </List.Item> */}
                         </List>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }

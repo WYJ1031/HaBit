@@ -56,11 +56,11 @@
     color:#999;
 }
 .head_habitLink {
-    color:#39cc7b;
+    color:#06C1AE;
     /* background: black(.2) */
 }
 .head_habitLink:active {
-    background: #39cc7b.2;
+    background: #06C1AE.2;
 }
 .head_date {
     display: flex;
@@ -73,7 +73,7 @@
     color:#999;
 }
 .head_day {
-    color:#39cc7b;
+    color:#06C1AE;
 }
 
 /* body */

@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
+import moment from 'moment';
 import { Popover, NavBar, Icon, TextareaItem, ImagePicker, Button, PullToRefresh, Toast } from 'antd-mobile';
 import { Link, Route, BrowserRouter, Switch, Redirect, withRouter } from 'react-router-dom';
 
@@ -235,8 +236,11 @@ class book extends Component {
             reBook
         } = this.props.habit
         // 如果处于重置了就false，否则就是它本身的状态
-        console.log(bookHabit)
+        // console.log('bookHabit', bookHabit, isClockIn, reBook, this.props.habit, moment(bookHabit.lastDate).format('YYYY-MM-DD'), moment().format('YYYY-MM-DD'));
         isClockIn = reBook ? false : isClockIn
+        // if (moment(bookHabit.lastDate).format('YYYY-MM-DD') !== moment().format('YYYY-MM-DD')) {
+        //     isClockIn = false;
+        // }
         let simple = (
             <div className={`${style.simple}`}>
                 <div className={`${style.rotate} ${isClockIn ? style.active : ""}`}
@@ -323,7 +327,6 @@ class book extends Component {
                 {'请返回上一层'}
             </NavBar>
         );
-        console.log(bookHabit)
         let {
             habit
         } = bookHabit;

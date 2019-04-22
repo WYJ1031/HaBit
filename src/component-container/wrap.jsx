@@ -132,7 +132,7 @@ class wrap extends Component {
                 <Route exact path="/" />
                 <TabBar
                     unselectedTintColor="#999"
-                    tintColor="#39cc7b"
+                    tintColor="#06C1AE"
                     barTintColor="white"
                     hidden={false}
                 >
@@ -144,7 +144,7 @@ class wrap extends Component {
                         icon={<div style={{
                             width: '24px',
                             height: '24px',
-                            background: 'url(https://t1.picb.cc/uploads/2019/01/17/V6ZGg7.png) center center /  24px 24px no-repeat'
+                            background: 'url(https://i.loli.net/2019/04/22/5cbd85df35f42.png) center center /  20px 20px no-repeat'
                         }}
                         />
                         }
@@ -174,7 +174,7 @@ class wrap extends Component {
                         icon={<div style={{
                             width: '24px',
                             height: '24px',
-                            background: 'url(https://t1.picb.cc/uploads/2019/01/17/V6Z1Ps.png) center center /  24px 24px no-repeat'
+                            background: 'url(https://i.loli.net/2019/04/22/5cbd85df1f08c.png) center center /  20px 20px no-repeat'
                         }}
                         />
                         }
@@ -203,7 +203,7 @@ class wrap extends Component {
                         icon={<div style={{
                             width: '24px',
                             height: '24px',
-                            background: 'url(https://t1.picb.cc/uploads/2019/01/17/V6ZmOe.png) center center /  24px 24px no-repeat'
+                            background: 'url(https://i.loli.net/2019/04/22/5cbd85df35ea5.png) center center /  20px 20px no-repeat'
                         }}
                         />
                         }
@@ -228,7 +228,7 @@ class wrap extends Component {
                             <div style={{
                                 width: '24px',
                                 height: '24px',
-                                background: 'url(https://t1.picb.cc/uploads/2019/01/17/V6ZHH6.png) center center /  24px 24px no-repeat'
+                                background: 'url(https://i.loli.net/2019/04/22/5cbd85df1c5f9.png) center center /  20px 20px no-repeat'
                             }}
                             />}
                         selectedIcon={
